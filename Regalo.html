@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalo para Arakisu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #1a1e23, #054742); /* Cambié los colores del fondo a tonos más navideños */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: background 0.5s ease-in-out;
+        }
+
+        h1,
+        p {
+            color: #fff;
+        }
+
+        /* Estilo inicial para ocultar las imágenes */
+        .hidden {
+            display: none;
+        }
+
+        /* Estilo para el botón */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #bf1b2c; /* Cambié el color del botón a un rojo más festivo */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #8c131f; /* Cambié el color de hover del botón */
+        }
+
+        /* Estilo para las imágenes */
+        img {
+            max-width: 100%;
+            border-radius: 10px; /* Añadí bordes redondeados a las imágenes */
+            margin: 10px 0;
+        }
+
+        /* Estilo para el enlace a YouTube */
+        a {
+            color: #ffd700; /* Cambié el color del enlace a un amarillo dorado */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #e5c100; /* Cambié el color de hover del enlace */
+        }
+    </style>
+</head>
+
+<body onload="reproducirSonido()">
+
+    <audio id="sonido" src="himno_athletic.mp3" preload="auto" controls></audio>
+
+    <h1 id="titulo">ZORIONAK ARAKISU!</h1>
+
+    <button onclick="mostrarOcultarContenido()">Descubrir Regalo</button>
+
+    <div id="contenido" class="hidden">
+        <img src="Athletic_club.png" alt="Logo del Athletic Club">
+        <img src="ticket.jpg" alt="Tickets de Regalo">
+        <br>
+        <a href="https://www.youtube.com/watch?v=eZeC9VguxaA" target="_blank">Ver video en YouTube</a>
+    </div>
+
+    <p>Esperamos que disfrutes de tu regalo. ¡Felices fiestas!</p>
+
+    <script>
+        function mostrarOcultarContenido() {
+            var contenidoDiv = document.getElementById("contenido");
+            var titulo = document.getElementById("titulo");
+
+            if (contenidoDiv.style.display === "none") {
+                contenidoDiv.style.display = "block";
+                titulo.innerHTML = "¡Disfruta del contenido!";
+            } else {
+                contenidoDiv.style.display = "none";
+                titulo.innerHTML = "¡Bienvenido a tu Regalo de Navidad!";
+            }
+        }
+
+        function reproducirSonido() {
+            var sonido = document.getElementById("sonido");
+            sonido.play();
+        }
+    </script>
+
+</body>
+
+</html>
